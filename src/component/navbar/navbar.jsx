@@ -14,6 +14,4 @@ export default function Navbar() {
             <div className='text-secundary border-4 rounded-2xl p-2 hover:bg-secundary hover:text-white'>Contact</div>
         </div>
     </nav>
-
-
 }

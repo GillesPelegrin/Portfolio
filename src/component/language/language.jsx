@@ -1,6 +1,6 @@
 export default function Language() {
     return <>
-        <div className='flex justify-between mx-20 mt-28'>
+        <div className='flex justify-between mx-20 mt-28 items-center'>
             <div className='font-sans text-8xl text-black font-semibold'>Language</div>
             <div>
                 <div className='p-10 shadow-lg text-black'>

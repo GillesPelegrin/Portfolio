@@ -6,6 +6,7 @@ function App() {
     <>
     <Navbar></Navbar>
     <Body></Body>
+    <div className='m-40'></div>
     </>
   );
 }
