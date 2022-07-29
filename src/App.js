@@ -1,13 +1,12 @@
-import Navbar from './component/navbar/navbar';
-import Body from './component/body/body';
+import Navbar from "./component/navbar/navbar";
+import Body from "./component/body/body";
 
 function App() {
   return (
-    <>
-    <Navbar></Navbar>
-    <Body></Body>
-    <div className='m-40'></div>
-    </>
+    <div className="h-screen">
+      <Navbar></Navbar>
+      <Body></Body>
+    </div>
   );
 }
 
