@@ -1,17 +1,58 @@
-import { ReactComponent as IconMenu } from './logo.svg'
-
+import React, { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ReactComponent as IconMenu } from "./logo.svg";
 
 export default function Navbar() {
-    return <nav className='flex justify-between mx-20 mt-8 font-semibold text-black font-sans'>
-        <div className='flex gap-6 items-center'>
-            <IconMenu height='90px' width='90px' />
-            <div className='text-5xl '>Gilles Pelegrin</div>
+  const [openMobileNav, setOpenMobileNav] = useState(true);
+
+  return (
+    <>
+      <nav className="mx-4 mt-8 flex justify-between font-sans font-semibold text-color-title md:mx-10 lg:mx-20">
+        <div className="flex items-center gap-4 xl:gap-6">
+          <IconMenu className=" h-12 w-12 lg:h-16 lg:w-16 xl:h-20 xl:w-20" />
+          <div className=" text-3xl lg:text-4xl xl:text-5xl ">
+            Gilles Pelegrin
+          </div>
         </div>
-        <div className='flex gap-9 text-4xl items-center cursor-pointer  text-gray '>
-            <div className='hover:text-black'>Languages</div>
-            <div className='hover:text-black'>Projects</div>
-            {/* This button does not respons the right way, i have the feeling that the border is removed when hovering */}
-            <div className='text-secundary border-4 rounded-2xl p-2 hover:bg-secundary hover:text-white'>Contact</div>
+        <button
+          className="flex items-center md:hidden"
+          type="button"
+          onClick={() => setOpenMobileNav(!openMobileNav)}
+        >
+          <GiHamburgerMenu size={30} />
+        </button>
+        <div className=" hidden cursor-pointer md:block ">
+          <ul className="flex flex-col text-2xl text-color-title md:flex-row  md:space-x-6   lg:space-x-8 xl:text-4xl">
+            <li className="md:flex md:items-center">
+              <a className="block hover:text-color-title">Languages</a>
+            </li>
+            <li className="md:flex md:items-center">
+              <a className="block hover:text-color-title ">Projects</a>
+            </li>
+            <li className="md:flex md:items-center">
+              {/* This button does not respons the right way, i have the feeling that the border is removed when hovering */}
+              <a className="block rounded-2xl  border-secundary border-4 p-2 text-secundary hover:bg-secundary hover:text-white">
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
+      {openMobileNav && (
+        <div className="mx-4 my-4 block cursor-pointer  font-sans font-semibold shadow-lg md:hidden">
+          <ul className=" mx-4 py-8 text-2xl text-color-title  ">
+            <li className="mb-2">
+              <a className="hover:text-color-text">Languages</a>
+            </li>
+            <li className="mb-2">
+              <a className="mb-2 hover:text-color-text">Projects</a>
+            </li>
+            <li>
+              <a className="mb-2  text-secundary hover:text-sky-600">Contact</a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </>
+  );
 }

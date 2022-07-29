@@ -10,8 +10,8 @@ module.exports = {
       colors: {
         'primary': '#F5A154',
         'secundary': '#54A8F5',
-        'black': '#3E3C3C',
-        'gray': '#7B7B7B'
+        'color-title': '#3E3C3C',
+        'color-text': '#7B7B7B'
       },
       fontFamily: {
         sans: [
