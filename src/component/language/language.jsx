@@ -14,7 +14,7 @@ export default function Language() {
                             <div>Technology: Eslint, Protractor, Cypress, Primsa</div>
                         </div>
                     </div>
-                    <div className=" mt-6 px-4 py-6 text-color-title shadow-lg">
+                    <div className=" mt-6 px-4 lg:px-10 lg:py-12 py-6 text-color-title shadow-lg">
                         <CardTitle title='Javascript + Typescript'> </CardTitle>
                         <div className="pt-4 font-serif text-base lg:text-xl xl:text-2xl">
                             <div>Framework: spring boot</div>
