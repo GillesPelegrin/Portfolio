@@ -1,42 +1,101 @@
-import node  from './nodejs.png'
-import pwa  from './pwa.png'
-import three  from './three2.png'
+import pwa from "./pwa.png";
+import three from "./three3.png";
+import node from "./nodejs.png";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState } from "react";
+import TopicTitle from "../topic-title";
 
+FaChevronRight;
 
 export default function Project() {
-    return (
-      <>
-        <div className="mx-20 mt-28 flex items-center justify-between">
-          <div className="flex gap-10">
-            <div className="shadow-lg">
-              <img src={pwa} width={380} height={210} alt="PWA" />
-              <h2 className="my-3 text-center font-serif text-3xl font-bold">
-                PWA
-              </h2>
-            </div>
-            <div className="shadow-lg">
-              <img src={three} width={380} height={210} alt="Threejs" />
-              <h2 className="my-3 text-center font-serif text-3xl font-bold">
-                Threejs
-              </h2>
-            </div>
-            <div className="shadow-lg">
-              <img
-                className="scale-50"
-                src={node}
-                width={380}
-                height={210}
-                alt="Nodejs"
-              />
-              <h2 className="my-3 text-center font-serif text-3xl font-bold">
-                NodeJs
-              </h2>
+  const carouselDistances = [-66, -33, 0];
+  // const carouselDistances = [0, 0, 0];
+  const [carousel, setCarousel] = useState(carouselDistances[2]);
+
+  function next(array, value) {
+    const index = array.indexOf(value);
+    return array.length - 1 === index ? value : array[index + 1];
+  }
+
+  function previous(array, value) {
+    const index = array.indexOf(value);
+    return index === 0 ? value : array[index - 1];
+  }
+
+  return (
+    <>
+      <button
+        className="primary hidden  pl-14 sm:block"
+        onClick={() => setCarousel(previous(carouselDistances, carousel))}
+      >
+        <FaChevronLeft size={32} />
+      </button>
+      <button
+        className="hidden pl-8 text-primary sm:block"
+        onClick={() => setCarousel(next(carouselDistances, carousel))}
+      >
+        <FaChevronRight size={32} />
+      </button>
+
+      <div className=" mr-0 flex min-h-[66%] flex-col flex-col-reverse items-center justify-center md:mr-10 lg:mr-20 lg:flex-grow lg:flex-row lg:justify-between xl:mr-0">
+        <div className=" flex items-center justify-between  overflow-x-auto">
+          <div
+            style={{
+              transform: `translate(${carousel}%, 0px)`,
+              transition: "all 500ms",
+            }}
+            className={`relative `}
+          >
+            <div className="flex md:gap-4">
+              <ProjectCard src={pwa} title="PWA" />
+              <ProjectCard src={three} title="ThreeJs" />
+              <ProjectCard src={node} title="NodeJs" />
             </div>
           </div>
-          <div className="font-sans text-8xl font-semibold text-color-title">
-            Projects
-          </div>
+
+          {/*<div className="absolute left-2/4 flex">*/}
+          {/*  <div*/}
+          {/*    style={{ width: "calc(100vw - 4rem" }}*/}
+          {/*    className="left-4/4 relative"*/}
+          {/*  >*/}
+          {/*    <ProjectCard src={pwa} title="PWA" />*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+          {/*<div className="absolute left-2/4 flex">*/}
+          {/*  <div*/}
+          {/*    style={{ width: "calc(100vw - 4rem" }}*/}
+          {/*    className="relative -left-2/4"*/}
+          {/*  >*/}
+          {/*    <ProjectCard src={three} title="ThreeJs" />*/}
+          {/*  </div>*/}
+
+          {/*<div*/}
+          {/*  style={{ width: "calc(100vw - 4rem" }}*/}
+          {/*  className="-left-4/4 relative"*/}
+          {/*>*/}
+          {/*  <ProjectCard src={pwa} title="PWA" />*/}
+          {/*</div>*/}
+          {/*</div>*/}
+          {/*<div className="relative">*/}
+          {/*  <ProjectCard src={three} title="ThreeJs" />*/}
+          {/*</div>*/}
+          {/*<div className="relative">*/}
+          {/*  <ProjectCard src={node} title="NodeJs" />*/}
+          {/*</div>*/}
         </div>
-      </>
-    );
+        <TopicTitle title="Projects" />
+      </div>
+    </>
+  );
+}
+
+function ProjectCard({ src, title }) {
+  return (
+    <div className=" min-w-full rounded border border-black border-opacity-5 shadow-lg sm:min-w-0 lg:max-w-sm">
+      <img className="w-full border-b p-8" src={src} alt={title} />
+      <h2 className="my-3 text-center font-serif text-3xl font-bold text-color-title">
+        {title}
+      </h2>
+    </div>
+  );
 }
