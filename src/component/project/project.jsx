@@ -37,7 +37,7 @@ export default function Project() {
         <FaChevronRight size={32} />
       </button>
 
-      <div className=" mr-0 flex min-h-[66%] flex-col flex-col-reverse items-center justify-center md:mr-10 lg:mr-20 lg:flex-grow lg:flex-row lg:justify-between xl:mr-0">
+      <div className=" mr-0 flex min-h-[66%] flex-col flex-col-reverse items-center justify-center md:mr-10 lg:mr-20 lg:flex-grow lg:flex-row lg:justify-between xl:mr-40">
         <div className=" flex items-center justify-between  overflow-x-auto">
           <div
             style={{
@@ -47,41 +47,13 @@ export default function Project() {
             className={`relative `}
           >
             <div className="flex md:gap-4">
+              {/*https://tailwindcss.com/docs/scroll-snap-type   still need to be implemented*/}
+
               <ProjectCard src={pwa} title="PWA" />
               <ProjectCard src={three} title="ThreeJs" />
               <ProjectCard src={node} title="NodeJs" />
             </div>
           </div>
-
-          {/*<div className="absolute left-2/4 flex">*/}
-          {/*  <div*/}
-          {/*    style={{ width: "calc(100vw - 4rem" }}*/}
-          {/*    className="left-4/4 relative"*/}
-          {/*  >*/}
-          {/*    <ProjectCard src={pwa} title="PWA" />*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className="absolute left-2/4 flex">*/}
-          {/*  <div*/}
-          {/*    style={{ width: "calc(100vw - 4rem" }}*/}
-          {/*    className="relative -left-2/4"*/}
-          {/*  >*/}
-          {/*    <ProjectCard src={three} title="ThreeJs" />*/}
-          {/*  </div>*/}
-
-          {/*<div*/}
-          {/*  style={{ width: "calc(100vw - 4rem" }}*/}
-          {/*  className="-left-4/4 relative"*/}
-          {/*>*/}
-          {/*  <ProjectCard src={pwa} title="PWA" />*/}
-          {/*</div>*/}
-          {/*</div>*/}
-          {/*<div className="relative">*/}
-          {/*  <ProjectCard src={three} title="ThreeJs" />*/}
-          {/*</div>*/}
-          {/*<div className="relative">*/}
-          {/*  <ProjectCard src={node} title="NodeJs" />*/}
-          {/*</div>*/}
         </div>
         <TopicTitle title="Projects" />
       </div>
