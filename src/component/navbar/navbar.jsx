@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
       </nav>
       {openMobileNav && (
-        <div className="absolute inset-x-0 mx-4 my-4 block cursor-pointer  font-sans font-semibold shadow-lg md:hidden">
+        <div className="absolute inset-x-0 mx-4 my-4 block cursor-pointer bg-white  font-sans font-semibold shadow-lg md:hidden">
           <ul className=" mx-4 py-8 text-2xl text-color-title  ">
             <li className="mb-2">
               <a className="hover:text-color-text">Languages</a>
