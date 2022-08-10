@@ -16,7 +16,7 @@ export default function Introduction() {
           <img
             src={working}
             alt="Cartoon of Gilles Pelegrin"
-            className="h-auto w-72 lg:h-80 lg:w-80 xl:h-[398px] xl:w-[422px]"
+            className="h-auto w-72 md:h-80 md:w-80 xl:h-[398px] xl:w-[422px]"
           ></img>
         </div>
       </div>
