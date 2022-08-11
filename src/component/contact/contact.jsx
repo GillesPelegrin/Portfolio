@@ -3,7 +3,10 @@ import TopicTitle from "../topic-title";
 export default function Language() {
   return (
     <>
-      <div className=" mx-3 flex min-h-[66%] flex-col items-center justify-center gap-8 md:mx-6 md:gap-10 lg:mx-20 lg:flex-grow lg:flex-row lg:justify-between 2xl:mx-40">
+      <div
+        id="contact"
+        className=" mx-3 flex min-h-[66%] flex-col items-center justify-center gap-8 md:mx-6 md:gap-10 lg:mx-20 lg:flex-grow lg:flex-row lg:justify-between 2xl:mx-40"
+      >
         <TopicTitle title="Contact" />
         <div
           className=" xl:p w-full rounded border border-4 border-white px-4 py-6 font-serif text-base text-color-title

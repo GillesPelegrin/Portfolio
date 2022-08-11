@@ -7,9 +7,9 @@ export default function Body() {
   return (
     <>
       <Introduction />
-      <div className="h-1/6"></div>
+      <div id="language" className="h-1/6"></div>
       <Language />
-      <div className="h-1/6"></div>
+      <div id="project" className="h-1/6"></div>
       <Project />
       <div className="h-1/6"></div>
       <Contact />
