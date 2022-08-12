@@ -2,7 +2,10 @@ import working from "../body/working.png";
 
 export default function Introduction() {
   return (
-    <div className="mx-3 flex min-h-[66%] items-center  justify-center md:mx-6 lg:mx-20 2xl:mx-40">
+    <div
+      className=" mx-3 flex  items-center  justify-center md:mx-6 lg:mx-20 2xl:mx-40"
+      style={{ height: `calc(100vh * 4/6)` }}
+    >
       <div className="order-2  flex flex-col-reverse content-center  justify-center lg:flex-grow  lg:flex-row lg:justify-between">
         <div className="mt-14 text-center lg:text-left">
           <div className="bg-gradient-to-r from-red-400 to-primary bg-clip-text font-sans text-3xl font-semibold text-transparent md:text-5xl lg:text-6xl 2xl:text-8xl">

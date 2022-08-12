@@ -38,7 +38,10 @@ export default function Project() {
 
   return (
     <>
-      <div className=" mr-0  min-h-[66%] lg:mr-20 xl:mr-40">
+      <div
+        className=" mr-0 lg:mr-20 xl:mr-40"
+        style={{ height: `calc(100vh * 4/6)` }}
+      >
         <button
           className="primary   hidden  pl-14 lg:block"
           onClick={() => setCarousel(previous(carouselDistances, carousel))}
@@ -80,7 +83,7 @@ export default function Project() {
 
 function ProjectCard({ src, title }) {
   return (
-    <div className=" min-w-[80%] snap-center rounded border border-black border-opacity-5 shadow-lg  md:min-w-[30%]  xl:min-w-[25%]">
+    <div className=" min-w-[80%] snap-center rounded  border border-black border-opacity-5 bg-white shadow-lg  md:min-w-[30%]  xl:min-w-[25%]">
       <img className="w-full border-b p-8" src={src} alt={title} />
       <h2 className="my-3 text-center font-serif text-3xl font-bold text-color-title">
         {title}
