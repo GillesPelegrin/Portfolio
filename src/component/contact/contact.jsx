@@ -17,6 +17,8 @@ export default function Language() {
   };
 
   function handleSubmit(e) {
+    e.preventDefault();
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -24,8 +26,6 @@ export default function Language() {
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
-
-    e.preventDefault();
   }
 
   return (
@@ -42,7 +42,7 @@ export default function Language() {
           text-color-title shadow-card md:w-1/2 md:p-6 md:text-xl 2xl:p-10 2xl:text-2xl"
         >
           <form
-            onSubmit={() => handleSubmit()}
+            onSubmit={handleSubmit}
             className="flex flex-col gap-4 md:gap-6 2xl:gap-8"
           >
             <input type="hidden" name="form-name" value="contact" />
