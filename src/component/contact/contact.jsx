@@ -24,26 +24,38 @@ export default function Language() {
               <label htmlFor="name">Name / Company</label>
               <input
                 id="name"
-                className="rounded border border-black focus:outline-primary"
+                name="name"
+                type="text"
+                className="rounded border border-black pl-2 focus:outline-primary"
+                required={true}
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
-                className="rounded border border-black focus:outline-primary"
+                name="email"
+                type="text"
+                className="rounded border border-black pl-2 focus:outline-primary"
+                required={true}
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
+                name="message"
+                type="text"
                 rows={4}
-                className="rounded border border-black focus:outline-primary"
+                className="rounded border border-black pl-2 focus:outline-primary"
+                required={true}
               ></textarea>
             </div>
             <div className="text-right">
-              <button className="rounded-md border border-4 border-secundary px-2 py-1 font-semibold text-secundary hover:bg-secundary hover:text-white  md:px-4 md:py-2">
+              <button
+                type="submit"
+                className="rounded-md border border-4 border-secundary px-2 py-1 font-semibold text-secundary hover:bg-secundary hover:text-white  md:px-4 md:py-2"
+              >
                 Send Message
               </button>
             </div>
