@@ -19,7 +19,7 @@ export default function Language() {
             method="post"
             className="flex flex-col gap-4 md:gap-6 2xl:gap-8"
           >
-            <input type="hidden" name="contact-form" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col">
               <label htmlFor="name">Name / Company</label>
               <input
