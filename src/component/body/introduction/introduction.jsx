@@ -1,4 +1,4 @@
-import working from "../body/working.png";
+import working from "../working.png";
 
 export default function Introduction() {
   return (

@@ -3,7 +3,7 @@ import three from "./three3.png";
 import node from "./nodejs.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
-import TopicTitle from "../topic-title";
+import TopicTitle from "../../topic-title";
 
 FaChevronRight;
 

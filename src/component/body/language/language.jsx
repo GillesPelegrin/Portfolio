@@ -1,4 +1,4 @@
-import TopicTitle from "../topic-title";
+import TopicTitle from "../../topic-title";
 
 export default function Language() {
   return (

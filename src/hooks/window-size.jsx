@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 
-function useWindowSize() {
+function useToast() {
   const [size, setSize] = useState([0, 0]);
   useLayoutEffect(() => {
     function updateSize() {

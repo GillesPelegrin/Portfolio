@@ -1,12 +1,15 @@
-import TopicTitle from "../topic-title";
+import TopicTitle from "../../topic-title";
 import React, { useState } from "react";
+import { useToast } from "../../toast/use-toast";
 
 export default function Language() {
-  const [contactForm, setContactForm] = useState({
+  const toast = useToast(20000);
+  const emptyContactForm = {
     name: "",
     email: "",
     message: "",
-  });
+  };
+  const [contactForm, setContactForm] = useState(emptyContactForm);
 
   const encode = (data) => {
     return Object.keys(data)
@@ -24,8 +27,16 @@ export default function Language() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...contactForm }),
     })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+      .then(() =>
+        toast(
+          "success",
+          "You have successfully send a mail to Gilles Pelegrin!"
+        )
+      )
+      .then(() => setContactForm(emptyContactForm))
+      .catch((error) =>
+        toast("error", "Something went wrong while sending this email")
+      );
   }
 
   return (
@@ -45,7 +56,6 @@ export default function Language() {
             onSubmit={handleSubmit}
             className="flex flex-col gap-4 md:gap-6 2xl:gap-8"
           >
-            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col">
               <label htmlFor="name">Name / Company</label>
               <input
@@ -53,6 +63,7 @@ export default function Language() {
                 type="text"
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                value={contactForm.name}
                 onChange={(event) =>
                   setContactForm({
                     ...contactForm,
@@ -65,9 +76,10 @@ export default function Language() {
               <label htmlFor="email">Email</label>
               <input
                 id="email"
-                type="text"
+                type="email"
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                value={contactForm.email}
                 onChange={(event) =>
                   setContactForm({
                     ...contactForm,
@@ -84,6 +96,7 @@ export default function Language() {
                 rows={4}
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                value={contactForm.message}
                 onChange={(event) =>
                   setContactForm({
                     ...contactForm,

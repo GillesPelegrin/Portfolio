@@ -1,7 +1,7 @@
-import Language from "../language/language";
-import Project from "../project/project";
-import Introduction from "../introduction/introduction";
-import Contact from "../contact/contact";
+import Language from "./language/language";
+import Project from "./project/project";
+import Introduction from "./introduction/introduction";
+import Contact from "./contact/contact";
 import React, { useEffect, useState } from "react";
 
 export default function Body() {
