@@ -14,7 +14,12 @@ export default function Language() {
           className=" xl:p w-full rounded border border-4 border-white bg-white px-4 py-6 font-serif text-base
           text-color-title shadow-card md:w-1/2 md:p-6 md:text-xl 2xl:p-10 2xl:text-2xl"
         >
-          <form className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
+          <form
+            name="contact"
+            method="post"
+            className="flex flex-col gap-4 md:gap-6 2xl:gap-8"
+          >
+            <input type="hidden" name="contact-form" value="contact" />
             <div className="flex flex-col">
               <label htmlFor="name">Name / Company</label>
               <input
