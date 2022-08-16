@@ -1,6 +1,25 @@
 import TopicTitle from "../topic-title";
+import React, { useState } from "react";
 
 export default function Language() {
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  function handleSubmit(e) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...contactForm }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  }
+
   return (
     <>
       <div
@@ -15,8 +34,7 @@ export default function Language() {
           text-color-title shadow-card md:w-1/2 md:p-6 md:text-xl 2xl:p-10 2xl:text-2xl"
         >
           <form
-            name="contact"
-            method="post"
+            onSubmit={() => handleSubmit()}
             className="flex flex-col gap-4 md:gap-6 2xl:gap-8"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -24,31 +42,46 @@ export default function Language() {
               <label htmlFor="name">Name / Company</label>
               <input
                 id="name"
-                name="name"
                 type="text"
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                onChange={(event) =>
+                  setContactForm({
+                    ...contactForm,
+                    ...{ name: event.target.value },
+                  })
+                }
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
-                name="email"
                 type="text"
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                onChange={(event) =>
+                  setContactForm({
+                    ...contactForm,
+                    ...{ email: event.target.value },
+                  })
+                }
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
-                name="message"
                 type="text"
                 rows={4}
                 className="rounded border border-black pl-2 focus:outline-primary"
                 required={true}
+                onChange={(event) =>
+                  setContactForm({
+                    ...contactForm,
+                    ...{ message: event.target.value },
+                  })
+                }
               ></textarea>
             </div>
             <div className="text-right">
