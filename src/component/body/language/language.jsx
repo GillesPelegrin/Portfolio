@@ -21,7 +21,9 @@ export default function Language() {
             <CardTitle title="Java (8-11)"> </CardTitle>
             <div className="pt-4 font-serif text-base md:text-xl xl:pt-6  2xl:text-2xl">
               <div>Framework: spring boot</div>
-              <div>Technology: Liquibase, Maven, Hibernate, spring batch, ...</div>
+              <div>
+                Technology: Liquibase, Maven, Hibernate, spring batch, ...
+              </div>
             </div>
           </div>
         </div>
@@ -32,7 +34,7 @@ export default function Language() {
 
 function CardTitle({ title }) {
   return (
-    <div className="font-sans text-2xl font-semibold  md:text-4xl ">
+    <div className="font-sans text-2xl font-semibold  md:text-3xl ">
       {title}
     </div>
   );
