@@ -1,0 +1,115 @@
+.body {
+  font-family: "Nunito Sans";
+}
+
+.container {
+  background-color: #f4f4f4;
+}
+
+/* First section */
+
+.top-section {
+  padding-left: 1rem;
+
+  padding-top: 1rem;
+  background-color: #df4747;
+  color: white;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  font-family: "Nunito Sans";
+}
+
+.logo {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.job-titles {
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 3.5rem;
+}
+
+.job-titles > p {
+  padding-bottom: 0.1rem;
+}
+
+.picture > img {
+  position: fixed;
+  /* left: 5rem; */
+  top: 8rem;
+  right: -2rem;
+  border-radius: 100%;
+  background-color: #6155ee;
+  width: 10rem;
+  height: 10rem;
+}
+
+.main-job {
+  font-weight: 700;
+}
+/*  */
+/* Middle Section */
+
+.motivation {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.sub-title {
+  color: #615e5e;
+  font-size: 1.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.motivation-text {
+  padding-bottom: 2rem;
+  color: #6f6c6c;
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* Bottom Section */
+
+.contact-information {
+  padding-left: 1rem;
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+  font-family: "Nunito Sans";
+}
+
+.icon {
+  background-color: #f1eeee;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  padding: 0.4rem;
+}
+
+svg {
+  color: #df4747;
+}
+
+.contact-info-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  color: #6155ee;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+}
