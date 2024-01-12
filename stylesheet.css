@@ -11,7 +11,6 @@
 .top-section {
   padding-left: 1rem;
 
-  padding-top: 1rem;
   background-color: #df4747;
   color: white;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
@@ -19,9 +18,18 @@
   font-family: "Nunito Sans";
 }
 
+.name-logo-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
-  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding-top: 1.4rem;
   padding-bottom: 1rem;
+  padding-right: 1rem;
 }
 
 h1 {
@@ -32,7 +40,7 @@ h1 {
 
 .job-titles {
   opacity: 0.7;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 3.5rem;
@@ -44,14 +52,36 @@ h1 {
 
 .picture > img {
   position: fixed;
-  /* left: 5rem; */
-  top: 8rem;
+  top: 6rem;
   right: -2rem;
   border-radius: 100%;
   background-color: #6155ee;
   width: 10rem;
   height: 10rem;
+  object-fit: cover;
 }
+
+/* .picture {
+  border-radius: 50%;
+  height: 118px;
+  overflow: hidden;
+  position: relative;
+  width: 118px; */
+
+/* position: fixed; 
+  /* top: 6rem; */
+/* right: -2rem; */
+/* } */
+
+/* .center {
+  position: relative;
+  padding-left: 50%;
+}
+
+.thumb {
+  position: absolute;
+  left: -50%;
+} */
 
 .main-job {
   font-weight: 700;
@@ -108,7 +138,8 @@ svg {
 }
 
 .contact-info {
-  color: #6155ee;
+  color: #2a6bc3;
+  text-decoration: underline;
   padding-left: 1rem;
   display: flex;
   align-items: center;
